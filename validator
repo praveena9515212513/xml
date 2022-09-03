@@ -1,0 +1,30 @@
+xml schema generator link:https://www.freeformatter.com/xsd-generator.html#before-output
+xml validator link:https://www.liquid-technologies.com/online-xsd-validator
+
+******************************  xml code:   **************************
+<class>
+	<student>
+		<fname>Pravee</fname>
+		<lname>Bhimani</lname>
+		<age>18</age>
+	</student>
+</class>
+
+********************************   xsd:   ********************************
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="class">
+		<xs:complexType>
+		     <xs:sequence>
+			<xs:element name="student" maxOccurs="unbounded" minOccurs="0"> <!-- unbounded says that student tag can occur any number of times-->
+				<xs:complexType>
+		  		   <xs:sequence>
+					<xs:element name="fname" type="xs:string"/>
+					<xs:element name="lname" type="xs:string"/>
+					<xs:element name="age" type="xs:int"/>
+		  		   </xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		     </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
