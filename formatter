@@ -1,0 +1,25 @@
+XML formatter link:https://www.liquid-technologies.com/online-xml-formatter
+example code1:
+<class>
+	<student>
+		<fname>Pravee</fname>
+		<lname>Bhimani</lname>
+		<age>18</age>
+	</student>
+</class>
+
+example code2:
+<families>
+	<family1>
+		<father>Narsi</father>
+		<mother>Nag</mother>
+		<sister>Sasi</sister>
+		<me>Pravee</me>
+	</family1>
+	<family2>
+		<father>Chintu</father>
+		<mother>Pravee</mother>
+		<brother>Karthi</brother>
+		<buddi>ashish</buddi>
+	</family2>
+</families>
