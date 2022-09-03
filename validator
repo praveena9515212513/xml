@@ -28,3 +28,32 @@ xml validator link:https://www.liquid-technologies.com/online-xsd-validator
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
+****************************** code2 ***********************
+<books>
+    <book>
+        <bname>HTML</bname>
+        <bauthor>abhi</bauthor>
+        <bprice>250</bprice>
+        <bpub>xyz</bpub>
+    </book>
+</books>
+********************** xsd *******************************
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="books">
+      <xs:complexType>
+        <xs:sequence>
+        <xs:element name="book">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="bname" type="xs:string"/>
+                    <xs:element name="bauthor" type="xs:string"/>
+                    <xs:element name="bprice" type="xs:int"/>
+                    <xs:element name="bpub" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+   		</xs:sequence>
+      </xs:complexType>
+    </xs:element>
+</xs:schema>
