@@ -1,0 +1,101 @@
+
+<!DOCTYPE Bookstore[
+<!ELEMENT Bookstore (Book*,Author*)>
+<!ELEMENT Book (Title,Remark?)>
+<!ATTLIST Book ISBN ID #REQUIRED>
+			   Price CDATA #REQUIRED
+			  Authors CDATA #REQUIRED>
+
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Remark (#PCDATA | BookRef)*>
+<!ELEMENT BookRef EMPTY>
+<!ATTLIST BookRef book IDREF #REQUIRED>
+<!ELEMENT Author (Firstname,Lastname)>
+<!ATTLIST Author Ident ID #REQUIRED>
+<!ELEMENT Firstname (#PCDATA)>
+<!ELEMENT Lastname (#PCDATA)>
+]>
+<Bookstore>
+<Book ISBN = "ISBN-101" Price = "100" Authors = "JU JW">
+    <Title>
+        Introduction to Python
+    </Title>    
+</Book>
+
+<Book ISBN = "ISBN-202" Price = "120" Authors = "HG JU JW">
+    <Title>
+        Digital Circuit Design
+    </Title>
+    <Remark>
+        Amazon.com says: Buy this book bundled with
+        <BookRef book = "ISBN-303" /> - a great deal!
+    </Remark>       
+</Book>
+
+<Author Ident = "HG">
+    <Firstname>Hector</Firstname>
+    <Lastname>Garcia</Lastname>
+</Author>
+<Author Ident = "JU">
+    <Firstname>Jeffrey</Firstname>
+    <Lastname>Ullman</Lastname>
+</Author>
+<Author Ident = "JW">
+    <Firstname>Jennifer</Firstname>
+    <Lastname>Widom</Lastname>
+</Author>
+********************************************************************
+<!DOCTYPE University[
+<!ELEMENT University(collegename,type,email)>
+<!ATTLIST University id CDATA #REQUIRED>
+<!ELEMENT collegename (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type department CDATA #REQUIRED>
+<!ELEMENT email (#PCDATA)>
+]>
+<University id="02">
+<collegename>Harvard University</collegename>
+<type department="Science and Humanities" >Head of the Department</type>
+<email>yhkhi12@myhotmail.com</email>
+</University >
+
+
+Own one
+
+<!DOCTYPE articles[
+<!ELEMENT articles (article)>
+<!ELEMENT article (name,month,author,(reviews | feedback)+>
+<!ATTLIST article id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT author EMPTY>
+<!ATTLIST author name CDATA #REQUIRED>
+<!ELEMENT review (#PCDATA|EMPTY)>
+<!ATTLIST review lang CDATA #IMPLIED>
+<!ELEMENT feedback (#PCDATA)>
+]>
+
+from resources
+<!DOCTYPE articles [
+<!ELEMENT articles (Movie+) >
+<!ELEMENT article ( name, month, author, (reviews | feedback)+)>
+<!ATTLIST article id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT month (#PCDATA) >
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST author name CDATA #IMPLIED>
+<!ELEMENT reviews (#PCDATA)>
+<!ELEMENT feedback (#PCDATA)>
+<!ATTLIST reviews lang CDATA #IMPLIED>
+]>
+<articles>
+<article id="x34675">
+<name>Apache Spark Architecture</name>
+<month>december</month>
+<author name="kay vennisla"/>
+<reviews lang=""/>
+<feedback > high rating</feedback>
+<reviews lang="de">The best content with diagrams</reviews>
+<!-- most value content -->
+</article>
+</articles>
