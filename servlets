@@ -1,0 +1,39 @@
+<html>
+<body>
+<form action="./dd_menu" method="GET">
+<select name="subjects">
+<option value="s1">WT</option>
+<option value="s2">DBMS</option>
+</select>
+<input type="submit" value="submit"/>
+</form>
+</body>
+</html>
+
+<web-app>
+<servlet>
+<servlet-name>one</servlet-name>
+<servlet-class>ddm</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>one</servlet-name>
+<url-pattern>dd_menu</url-pattern>
+</servlet-mapping>
+</web-app>
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class ddm extends HttpServlet
+{
+public void doGET(HttpServletRequest req,HttpServletResponse res)throws ServletException,Exception
+{
+res.setContentType("text/html");
+PrintWriter pw = res.getWriter();
+String name = req.getParameter("subjects");
+if( name.equals("s1")==true)
+pw.println("Web Technologies");
+if(name.equals("s2")==true)
+pw.println("Database Management Systems");
+}
+}
