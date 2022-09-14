@@ -37,3 +37,44 @@ if(name.equals("s2")==true)
 pw.println("Database Management Systems");
 }
 }
+
+
+<html>
+<body>
+<form action="./flow" method="GET">
+<select name="flowers">
+<option value="f1">flower1</option>
+<option value="f2">flower2</option>
+</select>
+<input type="submit" value="submit"/>
+</form>
+</body>
+</html>
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class flower extends HttpServlet
+{
+public void doGET(HttpServletRequest req, HttpServletResponse res) throws ServletException,Exception
+{
+res.setContentType("text/html");
+PrintWriter pw = res.getWriter();
+String name = req.getParameter("flowers");
+if(name.equals("s1")==true)
+pw.println("<img src=1.jpg>");
+if(name.equals("s2")==true)
+pw.println("<img src=2.jpg>");
+}
+}
+
+<web-app>
+<servlet>
+<servlet-name>flower</servlet-name>
+<servlet-class>flower</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>flower</servlet-name>
+<url-pattern>/flow</url-pattern>
+</servlet-mapping>
+</web-app>
